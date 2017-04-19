@@ -9,6 +9,7 @@ client.on('message', function(msg) {
     let args = msg.content.split(' ');
     let command = args[0].replace(COMMAND_PREFIX, '');
     handleRoleRequiredCommand(null, command, msg, args);
+    handleRoleRequiredCommand('Amaterasu', command, msg, args);
   }
 });
 
