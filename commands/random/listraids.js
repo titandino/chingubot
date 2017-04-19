@@ -1,4 +1,1 @@
-const commando = require('discord.js-commando);
-
-
-
+const commando = require('discord.js-commando');

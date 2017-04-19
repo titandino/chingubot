@@ -5,4 +5,4 @@ bot.registry.registerGroup('random', 'Random');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + '/commands');
 
-bot.login(require('config').LOGIN_TOKEN);
+bot.login(require('./config').LOGIN_TOKEN);
