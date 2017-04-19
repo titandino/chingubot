@@ -36,6 +36,6 @@ client.getMember = function(msg, userId) {
   return this.getUser(userId).then(user => msg.channel.guild.fetchMember(user));
 };
 
-bot.on('ready', () => console.log('Bot connected as ' + bot.user.username));
+client.on('ready', () => console.log('Bot connected as ' + client.user.username));
 
-bot.login(LOGIN_TOKEN);
+client.login(LOGIN_TOKEN);
