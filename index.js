@@ -13,6 +13,14 @@ client.on('message', function(msg) {
     handleRoleRequiredCommand(null, command, msg, args);
     handleRoleRequiredCommand('Amaterasu', command, msg, args);
   }
+   if (msg.content == 'Scam') {
+    msg.channel.send('Zauun Top Scammer 2017');
+  } else if (msg.content && msg.content.startsWith(COMMAND_PREFIX)) {
+    let args = msg.content.split(' ');
+    let command = args[0].replace(COMMAND_PREFIX, '');
+    handleRoleRequiredCommand(null, command, msg, args);
+    handleRoleRequiredCommand('Amaterasu', command, msg, args);
+  }
 });
 
 function handleRoleRequiredCommand(roleName, command, msg, args) {
