@@ -5,7 +5,7 @@ const LOGIN_TOKEN = process.env.LOGIN_TOKEN || require('./config').LOGIN_TOKEN;
 const COMMAND_PREFIX = '.';
 
 client.on('message', function(msg) {
-  if (msg.content == '!BP') {
+  if (msg.content == 'BP') {
     msg.channel.send('BEEPEE?');
   } else if (msg.content && msg.content.startsWith(COMMAND_PREFIX)) {
     let args = msg.content.split(' ');
