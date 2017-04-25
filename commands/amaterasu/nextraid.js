@@ -15,13 +15,17 @@ module.exports = function(client, msg, args) {
         res.on('data', function(data) {
           let info = JSON.parse(data);
           let isIn = [];
-          let curr = info.raids[0];
-          while(curr) {
-            checkRaid(curr, mtChars, curr.dps, isIn);
-            checkRaid(curr, mtChars, curr.tank, isIn);
-            checkRaid(curr, mtChars, curr.priest, isIn);
-            checkRaid(curr, mtChars, curr.mystic, isIn);
-            curr = info.raids[curr.num++];
+          let curr = 0;
+          while(info.raids[curr]) {
+            let raidRoster = info.raids[curr].dps.concat(info.raids[curr].tank).concat(info.raids[curr].priest).concat(info.raids[curr].mystic);
+            raidRoster.forEach(rChar => {
+              mtChars.forEach(mChar => {
+                if (mChar == rChar.name) {
+                  isIn.push({char: mChar, idx: curr});
+                }
+              });
+            });
+            curr++;
           };
           let output = '\`\`\`';
           isIn.forEach(inR => output += info.raids[inR.idx].dayOfWeek + ' ' + info.raids[inR.idx].date + ' at ' + info.raids[inR.idx].time + ' on ' + inR.char + '\n');
@@ -32,13 +36,3 @@ module.exports = function(client, msg, args) {
     });
   });
 };
-
-function checkRaid(raid, myChars, raidChars, isIn) {
-  raidChars.forEach(rChar => {
-    myChars.forEach(mChar => {
-      if (mChar == rChar.name) {
-        isIn.push({char: mChar, idx: raid.num});
-      }
-    });
-  });
-}
