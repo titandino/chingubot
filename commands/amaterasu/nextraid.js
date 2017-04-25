@@ -26,7 +26,7 @@ module.exports = function(client, msg, args) {
           let output = '\`\`\`';
           isIn.forEach(inR => output += info.raids[inR.idx].dayOfWeek + ' ' + info.raids[inR.idx].date + ' at ' + info.raids[inR.idx].time + ' on ' + inR.char + '\n');
           output += '\`\`\`';
-          msg.channel.send(output);
+          msg.channel.send(output);  //needs to change to DM instead of channel msg
         });
       });
     });
@@ -42,3 +42,4 @@ function checkRaid(raid, myChars, raidChars, isIn) {
     });
   });
 }
+//needs to send every member a DM 2 hours before their next raid
