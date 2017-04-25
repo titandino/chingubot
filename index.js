@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const LOGIN_TOKEN = process.env.LOGIN_TOKEN || require('./config').LOGIN_TOKEN;
-const COMMAND_PREFIX = '.';
+const COMMAND_PREFIX = '!';
 
 client.on('message', function(msg) {
   if (msg.content == 'BP') {
