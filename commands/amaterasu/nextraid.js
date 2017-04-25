@@ -42,4 +42,4 @@ function checkRaid(raid, myChars, raidChars, isIn) {
     });
   });
 }
-//needs to send every member a DM 2 hours before their next raid
+//needs to send every member of each raid a DM 2 hours before their next raid
