@@ -1,5 +1,5 @@
 const https = require('https');
-const config = require('../../config');
+const config = require('../config');
 
 module.exports = function(client, msg, args) {
   https.get('https://dpsinject.us/api/v1/discord/user/id/' + msg.author.id + '/characters', function(res) {
@@ -30,7 +30,7 @@ module.exports = function(client, msg, args) {
           let output = '\`\`\`';
           isIn.forEach(inR => output += info.raids[inR.idx].dayOfWeek + ' ' + info.raids[inR.idx].date + ' at ' + info.raids[inR.idx].time + ' on ' + inR.char + '\n');
           output += '\`\`\`';
-          msg.channel.send(output);  //needs to change to DM instead of channel msg
+          msg.channel.send(output);
         });
       });
     });

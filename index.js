@@ -16,7 +16,7 @@ client.on('message', function(msg) {
 });
 
 function handleRoleRequiredCommand(roleName, command, msg, args) {
-  if (roleName) {
+  if (roleName != null) {
     client.getMember(msg, msg.author.id).then((member) => {
       if (member.roles.exists('name', roleName)) {
         require('./commands/' + roleName.toLowerCase() + '/' + command)(client, msg, args);
