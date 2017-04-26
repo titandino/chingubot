@@ -27,6 +27,10 @@ module.exports = function(client, msg, args) {
             });
             curr++;
           };
+          if (isIn.length <= 0) {
+            msg.channel.send('\`\`\`You aren\'t in any raids this week.\`\`\`');
+            return;
+          }
           let output = '\`\`\`';
           isIn.forEach(inR => output += info.raids[inR.idx].dayOfWeek + ' ' + info.raids[inR.idx].date + ' at ' + info.raids[inR.idx].time + ' on ' + inR.char + '\n');
           output += '\`\`\`';
