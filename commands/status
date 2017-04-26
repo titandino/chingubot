@@ -1,0 +1,3 @@
+client.SetGameAsync('Playing with schedules');
+// sets game as "Playing with raid schedules"  
+//send help
