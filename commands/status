@@ -1,0 +1,1 @@
+var game = {name: "with raid schedules"}; // sets game as "Playing with raid schedules"  
