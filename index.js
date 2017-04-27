@@ -5,6 +5,8 @@ const LOGIN_TOKEN = process.env.LOGIN_TOKEN || require('./config').LOGIN_TOKEN;
 const COMMAND_PREFIX = '!';
 
 client.on('message', function(msg) {
+  if (!verifyChannel(msg))
+    return;
   if (msg.content == 'BP') {
     msg.channel.send('BEEPEE?');
   } else if (msg.content && msg.content.startsWith(COMMAND_PREFIX)) {
@@ -29,6 +31,14 @@ function handleRoleRequiredCommand(roleName, command, msg, args) {
       //empty
     }
   }
+}
+
+function verifyChannel(msg) {
+  if (msg.channel instanceof Discord.DMChannel)
+    return true;
+  if (msg.channel.name == 'bot-channel')
+    return true;
+  return false;
 }
 
 client.getUser = function(userId) {
