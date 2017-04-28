@@ -1,7 +1,7 @@
 var request = require('request'); var mcCommand = '!status'; 
 client.on('message', message => {
 if (message.content === mcCommand) {
-    var url = 'http://mcapi.us/server/status?ip=' + mcIP + '&port=' + mcPort; //change to tera server parse from zayo
+    var url = 'http://tera.enmasse.com/server-status'; //change to tera server parse from zayo
     request(url, function(err, response, body) {
         if(err) {
             console.log(err);
