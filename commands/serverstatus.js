@@ -1,4 +1,4 @@
-var request = require('request'); var mcCommand = '!status'; // Command for triggering var mcIP = 'mc.paulkauffman.com'; // Your MC server IP var mcPort = 25565; // Your MC server port
+var request = require('request'); var mcCommand = '!status'; 
 client.on('message', message => {
 if (message.content === mcCommand) {
     var url = 'http://mcapi.us/server/status?ip=' + mcIP + '&port=' + mcPort;
