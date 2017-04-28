@@ -8,7 +8,7 @@ if (message.content === mcCommand) {
             return message.reply('Cannot contact Tera servers');
         }
         body = JSON.parse(body);
-        var status = 'Mount Tyrannus is Down';
+        var status = 'Mount Tyrannus is Offline';
         if(body.online) {
             status = 'Mount Tyrannus is Online';
         }
