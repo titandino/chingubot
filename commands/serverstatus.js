@@ -6,8 +6,8 @@ var app     = express();
 
 app.get('/scrape', function(req, res){
 
-  // Let's scrape Anchorman 2
-
+  // Scarping from Tera Servers Status
+  
   url = 'http://tera.enmasse.com/server-status';
 
   request(url, function(error, response, html){
@@ -36,5 +36,5 @@ app.get('/scrape', function(req, res){
   })
 })
 app.listen('8081')
-console.log('Magic happens on port 8081');
+console.log('Gathering Server Status');
 exports = module.exports = app;
