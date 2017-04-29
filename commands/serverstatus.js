@@ -6,7 +6,7 @@ var app     = express();
 
 app.get('/scrape', function(req, res){
 
-  // Scarping from Tera Servers Status
+  // Scraping from Tera Servers Status
   
   url = 'http://tera.enmasse.com/server-status';
 
