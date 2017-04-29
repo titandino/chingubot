@@ -7,6 +7,7 @@ var app     = express();
 app.get('/scrape', function(req, res){
 
   // Scraping from Tera Servers Status
+  // This code is 100% wrong atm and needs work
   
   url = 'http://tera.enmasse.com/server-status';
 
