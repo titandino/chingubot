@@ -7,19 +7,19 @@ var app     = express();
 app.get('/scrape', function(req, res){
 
   // Scraping from Tera Servers Status
-  // This code is 100% wrong atm and needs work
+  // Everything Below here is incomplete and needs changes
   
   url = 'http://tera.enmasse.com/server-status';
 
   request(url, function(error, response, html){
     if(!error){
       var $ = cheerio.load(html);
-      var title, release, rating;
-      var json = { title : "", release : "", rating : ""};
+      var title, release, rating; //Changes Here
+      var json = { title : "", release : "", rating : ""}; //Need changes here 
       $('.title_wrapper').filter(function(){
         var data = $(this);
         title = data.children().first().text().trim();
-        release = data.children().last().children().last().text().trim();
+        release = data.children().last().children().last().text().trim();  
         json.title = title;
         json.release = release;
       })
