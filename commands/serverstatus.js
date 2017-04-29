@@ -16,3 +16,4 @@ if (message.content === mcCommand) {
     });
 }
 });
+//send help
