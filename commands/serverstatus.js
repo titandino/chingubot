@@ -8,7 +8,7 @@ app.get('/scrape', function(req, res){
 
   // Let's scrape Anchorman 2
 
-  url = 'http://www.imdb.com/title/tt1229340/';
+  url = 'http://tera.enmasse.com/server-status';
 
   request(url, function(error, response, html){
     if(!error){
