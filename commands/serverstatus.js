@@ -1,41 +1,33 @@
-var express = require('express');
-var fs      = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
-var app     = express();
 
-app.get('/scrape', function(req, res){
+module.exports = function(client, msg, args) {
 
   // Scraping from Tera Servers Status
-  // Everything Below here is incomplete and needs changes
   
   url = 'http://tera.enmasse.com/server-status';
 
   request(url, function(error, response, html){
     if(!error){
       var $ = cheerio.load(html);
-      var title, release, rating; //Changes Here
-      var json = { title : "", release : "", rating : ""}; //Need changes here 
-      $('.title_wrapper').filter(function(){
+      var servers = [];
+      $('.server-up').filter(function(){
         var data = $(this);
-        title = data.children().first().text().trim();
-        release = data.children().last().children().last().text().trim();  
-        json.title = title;
-        json.release = release;
+        var serverName = data.children('.server-name').text().trim();
+        servers.push({serverName: serverName, status: 'ONLINE'});
       })
 
-      $('.ratingValue').filter(function(){
+      $('.server-down').filter(function(){
         var data = $(this);
-        rating = data.text().trim();
-        json.rating = rating;
+        var serverName = data.children('.server-name').text().trim();
+        servers.push({serverName: serverName, status: 'OFFLINE'});
       })
     }
-    fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err){
-      console.log('File successfully written! - Check your project directory for the output.json file');
-    })
-    res.send('Check your console!')
+    let output = '\`\`\`';
+    servers.forEach(function(server){
+      output += server.serverName + ': ' + server.status + '\n';
+    });
+    output += '\`\`\`';
+    msg.channel.send(output);
   })
-})
-app.listen('8081')
-console.log('Gathering Server Status');
-exports = module.exports = app;
+}
