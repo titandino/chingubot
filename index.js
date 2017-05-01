@@ -7,9 +7,7 @@ const COMMAND_PREFIX = '!';
 client.on('message', function(msg) {
   if (!verifyChannel(msg))
     return;
-  if (msg.content == 'BP') {
-    msg.channel.send('BEEPEE?');
-  } else if (msg.content && msg.content.startsWith(COMMAND_PREFIX)) {
+  if (msg.content && msg.content.startsWith(COMMAND_PREFIX)) {
     let args = msg.content.split(' ');
     let command = args[0].replace(COMMAND_PREFIX, '');
     handleRoleRequiredCommand(null, command, msg, args);
@@ -34,11 +32,11 @@ function handleRoleRequiredCommand(roleName, command, msg, args) {
 }
 
 function verifyChannel(msg) {
-  if (msg.channel instanceof Discord.DMChannel)
-    return true;
-  if (msg.channel.name == 'bot-channel')
-    return true;
-  return false;
+  // if (msg.channel instanceof Discord.DMChannel)
+  //   return true;
+  // if (msg.channel.name == 'bot-channel')
+  //   return true;
+  return true;
 }
 
 client.getUser = function(userId) {
