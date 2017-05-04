@@ -26,18 +26,4 @@
     "type": "git",
     "url": "https://github.com/cleverbotIO/node-cleverbot.io"
   },
-  "dependencies": {
-    "request": "^2.53.0"
-  },
-  "keywords": [
-    "cleverbot",
-    "developers",
-    "cloud",
-    "based",
-    "official",
-    "track",
-    "open",
-    "source",
-	"api"
-  ]
 }
