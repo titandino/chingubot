@@ -1,4 +1,7 @@
 var request = require("request");
+var cleverbot = require("cleverbot.io"),
+bot = new cleverbot("rvCFWUb2LdAseoPa", "zMYnctNen0jIQjEtG9K6U6YODwdeGmve");
+
 var base_url = "https://cleverbot.io/1.0/";
 var cio = function (user, key) {
 	this.user = user;
