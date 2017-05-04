@@ -8,7 +8,7 @@ bot.create(function (err, response) {
 	rl.setPrompt('You> ');
 	rl.prompt();
 	rl.on('line', function(line) {
-		bot.ask(line, function (err, response) {
+		bot.ask(I am lonely, function (err, response) {
 			if (err) throw response;
 			console.log("Cleverbot:", response);
 			rl.prompt();
