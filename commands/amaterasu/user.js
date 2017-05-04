@@ -1,7 +1,7 @@
 var cleverbot = require("./cleverbot.js");
 var readline = require('readline');
 var rl = readline.createInterface(process.stdin, process.stdout);
-bot = new cleverbot("YOUR_API_USER", "YOUR_API_KEY"); // cleverbot (user, key, nick)
+bot = new cleverbot("NEED_API_USER", "NEED_API_KEY"); // cleverbot parser
 
 bot.setNick("Amaterasu"); // This is optional
 bot.create(function (err, response) {
