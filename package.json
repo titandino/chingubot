@@ -21,4 +21,5 @@
   "main": "app.js",
   "scripts": {
     "test": "node .t"
+  },
 }
