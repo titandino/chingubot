@@ -21,9 +21,4 @@
   "main": "app.js",
   "scripts": {
     "test": "node .t"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cleverbotIO/node-cleverbot.io"
-  },
 }
