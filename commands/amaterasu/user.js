@@ -4,7 +4,7 @@ var readline = require('readline');
 var rl = readline.createInterface(process.stdin, process.stdout);
 //bot = new cleverbot('');  This is apparently wrong
 
-bot.setNick("Amaterasu"); // This is optional
+bot.setNick("Chingu"); // This is optional
 bot.create(function (err, response) {
 	rl.setPrompt('You> ');
 	rl.prompt();
