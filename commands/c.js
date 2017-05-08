@@ -1,3 +1,6 @@
+const Entities = require('html-entities').XmlEntities;
+const entities = new Entities();
+
 const CLEVERBOT_USER = process.env.CLEVERBOT_USER || require('../config').CLEVERBOT_USER;
 const CLEVERBOT_KEY = process.env.CLEVERBOT_KEY || require('../config').CLEVERBOT_KEY;
 var cleverbot = require('cleverbot.io'),
@@ -22,7 +25,7 @@ module.exports = function(client, msg, args) {
 
   bot.ask(question, function(err, response) {
     if(!err)
-      msg.channel.send(response);
+      msg.channel.send(entities.decode(response));
     else
       console.log(response);
   });
