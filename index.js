@@ -26,6 +26,7 @@ function handleRoleRequiredCommand(roleName, command, msg, args) {
     try {
       require('./commands/' + command)(client, msg, args);
     } catch(err) {
+      console.log(err);
       //empty
     }
   }

@@ -10,14 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^0.22.0",
+    "cleverbot.io": "^1.0.4",
     "discord.js": "^11.0.0",
     "google-spreadsheet": "^2.0.3"
-  },
-  "name": "cleverbot.io",
-  "version": "1.0.3",
-  "description": "A node.js client for cleverbot.io",
-  "main": "app.js",
-  "scripts": {
-    "test": "node .t"
   }
 }
