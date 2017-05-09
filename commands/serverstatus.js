@@ -22,6 +22,12 @@ module.exports = function(client, msg, args) {
         var serverName = data.children('.server-name').text().trim();
         servers.push({serverName: serverName, status: 'OFFLINE'});
       })
+
+      $('.server-maint').filter(function(){
+        var data = $(this);
+        var serverName = data.children('.server-name').text().trim();
+        servers.push({serverName: serverName, status: 'MAINTENANCE'});
+      })
     }
     let output = '\`\`\`';
     servers.forEach(function(server){
